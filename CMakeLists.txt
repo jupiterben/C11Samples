@@ -2,13 +2,15 @@ cmake_minimum_required(VERSION 3.6)
 
 project(c11samples)
 
-
+#SEE https://cmake.org/cmake/help/v3.6/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html#prop_gbl:CMAKE_CXX_KNOWN_FEATURES
 #auto_type
 add_executable(auto_type auto_type.cpp)
 target_compile_features(auto_type PRIVATE cxx_auto_type)
 #constexpr
 add_executable(constexpr constexpr.cpp)
 target_compile_features(constexpr PRIVATE cxx_constexpr)
+
+
 
 add_executable(allfeature allfeature.cpp)
 #target_compile_features(allfeature PRIVATE cxx_aggregate_default_initializers)
@@ -64,7 +66,7 @@ target_compile_features(allfeature PRIVATE cxx_unicode_literals)
 target_compile_features(allfeature PRIVATE cxx_uniform_initialization)
 target_compile_features(allfeature PRIVATE cxx_unrestricted_unions)
 target_compile_features(allfeature PRIVATE cxx_user_literals)
-target_compile_features(allfeature PRIVATE cxx_variable_templates)
+#target_compile_features(allfeature PRIVATE cxx_variable_templates)
 target_compile_features(allfeature PRIVATE cxx_variadic_macros)
 target_compile_features(allfeature PRIVATE cxx_variadic_templates)
 target_compile_features(allfeature PRIVATE cxx_template_template_parameters)
