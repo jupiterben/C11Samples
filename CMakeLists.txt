@@ -1,18 +1,20 @@
 cmake_minimum_required(VERSION 3.6)
 
-project(c11samples)
+project(cppSamples)
+
+set(c11folder source/c11)
 
 #SEE https://cmake.org/cmake/help/v3.6/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html#prop_gbl:CMAKE_CXX_KNOWN_FEATURES
 #auto_type
-add_executable(auto_type auto_type.cpp)
+add_executable(auto_type ${c11folder}/auto_type.cpp)
 target_compile_features(auto_type PRIVATE cxx_auto_type)
 #constexpr
-add_executable(constexpr constexpr.cpp)
+add_executable(constexpr ${c11folder}/constexpr.cpp)
 target_compile_features(constexpr PRIVATE cxx_constexpr)
 
 
-
-add_executable(allfeature allfeature.cpp)
+#all feature
+add_executable(allfeature ${c11folder}/allfeature.cpp)
 #target_compile_features(allfeature PRIVATE cxx_aggregate_default_initializers)
 target_compile_features(allfeature PRIVATE cxx_alias_templates)
 target_compile_features(allfeature PRIVATE cxx_alignas)
@@ -70,3 +72,8 @@ target_compile_features(allfeature PRIVATE cxx_user_literals)
 target_compile_features(allfeature PRIVATE cxx_variadic_macros)
 target_compile_features(allfeature PRIVATE cxx_variadic_templates)
 target_compile_features(allfeature PRIVATE cxx_template_template_parameters)
+
+
+
+#multi thread
+add_executable(multithread  ${c11folder}/multithreading/mt.cpp)
