@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.6)
 
 project(cppSamples)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${cppSamples_SOURCE_DIR}/cmake")
 set(c11folder source/c11)
 
 #SEE https://cmake.org/cmake/help/v3.6/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html#prop_gbl:CMAKE_CXX_KNOWN_FEATURES
@@ -100,25 +99,5 @@ target_compile_features(thread PRIVATE cxx_thread_local)
 
 #opencl
 find_package(OpenCL REQUIRED)
-include_directories(${OpenCL_INCLUDE_DIRS})
+include_directories(${OPENCL_INCLUDE_DIR})
 add_executable(openCL  source/openCL/openCL.cpp)
-target_link_libraries(openCL ${OpenCL_LIBRARIES})
-
-#openMP
-find_package(OpenMP REQUIRED) 
-if(OPENMP_FOUND)  
-message("OPENMP FOUND")  
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")  
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")  
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")  
-endif()  
-add_executable(OpenMP  source/OpenMP/OpenMP.cpp)
-
-#tbb
-#find_package(TBB REQUIRED)
-
-#vulkan
-#find_package(Vulkan REQUIRED)
-
-#cuda
-find_package(CUDA REQUIRED)
