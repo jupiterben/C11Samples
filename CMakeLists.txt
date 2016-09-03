@@ -1,9 +1,22 @@
 cmake_minimum_required(VERSION 3.6)
 
 project(cppSamples)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${cppSamples_SOURCE_DIR}/cmake")
+
+set(buildC11 0)
+set(buildBoost 0)
+set(buildCuda 0)
+set(buildIntelTBB 0)
+set(buildOpenCL 1)
+set(buildOpenMP 0)
+set(buildVulkan 0)
+set(buildBoost 1)
+
+
+####### buid c11
+if(${buildC11})
 
 set(c11folder source/c11)
-
 #SEE https://cmake.org/cmake/help/v3.6/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html#prop_gbl:CMAKE_CXX_KNOWN_FEATURES
 #auto_type
 add_executable(auto_type ${c11folder}/auto_type.cpp)
@@ -90,14 +103,52 @@ target_compile_features(static_assert PRIVATE cxx_static_assert)
 #target_compile_features(allfeature PRIVATE cxx_variadic_templates)
 #target_compile_features(allfeature PRIVATE cxx_template_template_parameters)
 
-
-
 #multi thread
 add_executable(thread  ${c11folder}/thread/thread.cpp)
 target_compile_features(thread PRIVATE cxx_thread_local)
 
+endif()
 
-#opencl
+
+#######  opencl
+if(${buildOpenCL})
 find_package(OpenCL REQUIRED)
-include_directories(${OPENCL_INCLUDE_DIR})
-add_executable(openCL  source/openCL/openCL.cpp)
+include_directories(${OpenCL_INCLUDE_DIRS} source/openCL)
+add_executable(openCL  source/openCL/openCL.cpp )
+add_executable(clinfo source/opencL/clinfo.c source/openCL/getopt_long.c)
+target_link_libraries(openCL ${OpenCL_LIBRARIES})
+target_link_libraries(clinfo ${OpenCL_LIBRARIES})
+endif()
+
+########  openMP
+if(${buildOpenMP})
+find_package(OpenMP REQUIRED) 
+if(OPENMP_FOUND)  
+message("OPENMP FOUND")  
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")  
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")  
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")  
+endif()  
+add_executable(OpenMP  source/OpenMP/OpenMP.cpp)
+endif()
+
+#############  tbb
+if(${buildIntelTBB})
+find_package(TBB REQUIRED)
+endif()
+
+########### vulkan
+if(${buildVulkan})
+find_package(Vulkan REQUIRED)
+endif()
+
+########### cuda
+if(${buildCuda})
+find_package(CUDA REQUIRED)
+endif()
+
+#######boost
+if(${buildBoost})
+set(ENV{BOOST_ROOT} "D:/Develop/Source/boost_1_61_0") 
+find_package(Boost REQUIRED)
+endif()
