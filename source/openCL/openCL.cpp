@@ -1,5 +1,18 @@
-#include <CL/CL.h>
 #include <vector>
+#include "clheader.h"
+
+#include <fstream>
+#include <sstream>
+std::string readFile(const std::string fileName)
+{
+	std::ifstream fs(fileName);
+	if (!fs.is_open())
+		return nullptr;
+	std::stringstream strstream;
+	strstream << fs.rdbuf();
+	return strstream.str();
+}
+
 
 
 //get platforms
@@ -40,6 +53,15 @@ int main()
 	auto platforms = getPlatforms();
 	auto devices = getDevices(platforms.front());
 	cl_context  context = clCreateContext(nullptr, 1, devices.data(), nullptr, nullptr, nullptr);
+	
+	std::string source = readFile("E:\\360Cloud\\Projects\\cppSamples\\source\\openCL\\kernal.cl");
+	const char* s = source.c_str();
+	cl_program program = clCreateProgramWithSource(context, 1, &s, 0, 0);
+	
+
+	
+	
+	clReleaseContext(context);
   
 
 

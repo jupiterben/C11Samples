@@ -1,2 +1,3 @@
 build
-.vscode/.*
+.vscode/.BROWSE*
+.vscode/.BROWSE.VC.DB

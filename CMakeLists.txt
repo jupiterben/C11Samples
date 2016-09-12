@@ -4,13 +4,13 @@ project(cppSamples)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${cppSamples_SOURCE_DIR}/cmake")
 
 set(buildC11 0)
-set(buildBoost 0)
+set(buildBoost 1)
 set(buildCuda 0)
 set(buildIntelTBB 0)
-set(buildOpenCL 1)
+set(buildOpenCL 0)
 set(buildOpenMP 0)
 set(buildVulkan 0)
-set(buildBoost 1)
+set(buildStd 0)
 
 
 ####### buid c11
@@ -118,6 +118,7 @@ add_executable(openCL  source/openCL/openCL.cpp )
 add_executable(clinfo source/opencL/clinfo.c source/openCL/getopt_long.c)
 target_link_libraries(openCL ${OpenCL_LIBRARIES})
 target_link_libraries(clinfo ${OpenCL_LIBRARIES})
+target_compile_features(openCL PRIVATE cxx_auto_type)
 endif()
 
 ########  openMP
@@ -132,23 +133,42 @@ endif()
 add_executable(OpenMP  source/OpenMP/OpenMP.cpp)
 endif()
 
-#############  tbb
+###########  tbb
 if(${buildIntelTBB})
 find_package(TBB REQUIRED)
 endif()
 
-########### vulkan
+###########  vulkan
 if(${buildVulkan})
 find_package(Vulkan REQUIRED)
 endif()
 
-########### cuda
+###########  cuda
 if(${buildCuda})
 find_package(CUDA REQUIRED)
 endif()
 
 #######boost
 if(${buildBoost})
-set(ENV{BOOST_ROOT} "D:/Develop/Source/boost_1_61_0") 
-find_package(Boost REQUIRED)
+if (WIN32 AND MSVC)
+    set(ENV{BOOST_ROOT} "D:/Develop/Source/boost_1_61_0") 
+    set(ENV{BOOST_LIBRARYDIR} "D:/Develop/Source/boost_1_61_0/bin.v2/libs")
 endif()
+find_package(Boost REQUIRED COMPONENTS filesystem)
+if(Boost_FOUND)
+    include_directories(${Boost_INCLUDE_DIRS})
+add_executable(fileSystem source/boost/fileSystem.cpp)
+target_link_libraries(fileSystem ${Boost_LIBRARIES})
+endif()
+endif()
+
+
+##########std
+
+
+#########opengl
+find_package(OpenGL REQUIRED)
+
+
+##########vtk
+
