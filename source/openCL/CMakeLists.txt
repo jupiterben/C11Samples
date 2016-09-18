@@ -1,0 +1,7 @@
+find_package(OpenCL REQUIRED)
+include_directories(${OpenCL_INCLUDE_DIRS} source/openCL)
+add_executable(openCL  source/openCL/openCL.cpp )
+add_executable(clinfo source/opencL/clinfo.c source/openCL/getopt_long.c)
+target_link_libraries(openCL ${OpenCL_LIBRARIES})
+target_link_libraries(clinfo ${OpenCL_LIBRARIES})
+target_compile_features(openCL PRIVATE cxx_auto_type)

@@ -69,19 +69,19 @@ void Section()
     }   
 }
 //task
-void TaskGroup()
-{
-    #pragma omp taskgroup
-    {
-        for (int tmp = 0; tmp < 32; tmp++)
-        { 
-            #pragma omp task
-            for (long l = tmp * 32; l < tmp * 32 + 32; l++)
-            {
-            }    
-        }
-    }
-}
+// void TaskGroup()
+// {
+// #pragma omp taskgroup
+//     {
+//         for (int tmp = 0; tmp < 32; tmp++)
+//         {
+// #pragma omp task
+//             for (long l = tmp * 32; l < tmp * 32 + 32; l++)
+//             {
+//             }
+//         }
+//     }
+// }
 
 int main()
 {
