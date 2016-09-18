@@ -11,7 +11,7 @@ option(BUILD_OPENCL "Builds OPENCL Sample Project" OFF)
 option(BUILD_OPENMP "Builds OPENMP Sample Project" OFF)
 option(BUILD_VULKAN "Builds VULKAN Sample Project" OFF)
 option(BUILD_MULTITHREAD "Builds MULTITHREAD Sample Project" ON)
-option(BUILD_VTK "Builds VTK Sample Project" ON)
+option(BUILD_VTK "Builds VTK Sample Project" OFF)
 
 
 ####### buid c11
