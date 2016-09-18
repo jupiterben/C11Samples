@@ -3,14 +3,15 @@ cmake_minimum_required(VERSION 3.6)
 project(cppSamples)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${cppSamples_SOURCE_DIR}/cmake")
 
-option(BUILD_C11 "Builds C11 Project" OFF)
-option(BUILD_BOOST "Builds Boost Project" OFF)
-option(BUILD_CUDA "Builds CUDA Project" OFF)
-option(BUILD_INTELTBB "Builds TBB Project" OFF)
-option(BUILD_OPENCL "Builds OPENCL Project" OFF)
-option(BUILD_OPENMP "Builds OPENMP Project" OFF)
-option(BUILD_VULKAN "Builds VULKAN Project" OFF)
-option(BUILD_MULTITHREAD "Builds MULTITHREAD Project" ON)
+option(BUILD_C11 "Builds C11 Sample Project" OFF)
+option(BUILD_BOOST "Builds Boost Sample Project" OFF)
+option(BUILD_CUDA "Builds CUDA Sample Project" OFF)
+option(BUILD_INTELTBB "Builds TBB Sample Project" OFF)
+option(BUILD_OPENCL "Builds OPENCL Sample Project" OFF)
+option(BUILD_OPENMP "Builds OPENMP Sample Project" OFF)
+option(BUILD_VULKAN "Builds VULKAN Sample Project" OFF)
+option(BUILD_MULTITHREAD "Builds MULTITHREAD Sample Project" ON)
+option(BUILD_VTK "Builds VTK Sample Project" ON)
 
 
 ####### buid c11
@@ -50,11 +51,13 @@ endif()
 
 
 #########opengl
-find_package(OpenGL REQUIRED)
+#find_package(OpenGL REQUIRED)
 
 
 ##########vtk
-
+if(BUILD_VTK)
+    add_subdirectory(source/vtk)
+endif()
 
 ##########MULTITHREAD
 if(BUILD_MULTITHREAD)
