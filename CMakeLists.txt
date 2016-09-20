@@ -1,17 +1,19 @@
 cmake_minimum_required(VERSION 3.6)
 
 project(cppSamples)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${cppSamples_SOURCE_DIR}/cmake")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${cppSamples_SOURCE_DIR}/CMake")
 
 option(BUILD_C11 "Builds C11 Sample Project" OFF)
 option(BUILD_BOOST "Builds Boost Sample Project" OFF)
 option(BUILD_CUDA "Builds CUDA Sample Project" OFF)
-option(BUILD_INTELTBB "Builds TBB Sample Project" ON)
+option(BUILD_INTELTBB "Builds TBB Sample Project" OFF)
 option(BUILD_OPENCL "Builds OPENCL Sample Project" OFF)
 option(BUILD_OPENMP "Builds OPENMP Sample Project" OFF)
 option(BUILD_VULKAN "Builds VULKAN Sample Project" OFF)
-option(BUILD_MULTITHREAD "Builds MULTITHREAD Sample Project" ON)
+option(BUILD_MULTITHREAD "Builds MULTITHREAD Sample Project" OFF)
 option(BUILD_VTK "Builds VTK Sample Project" OFF)
+option(BUILD_AGG "Builds AGG Sample Project" OFF)
+option(BUILD_CGAL "Builds CGAL Sample Project" ON)
 
 
 ####### buid c11
@@ -64,3 +66,12 @@ if(BUILD_MULTITHREAD)
     add_subdirectory(source/multiThread)
 endif()
 
+#####
+if(BUILD_AGG)
+    add_subdirectory(source/agg)
+endif()
+
+
+if(BUILD_CGAL)
+    add_subdirectory(source/cgal)
+endif()
