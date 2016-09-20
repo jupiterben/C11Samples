@@ -5,6 +5,7 @@
 #include <map>
 #include <thread>
 
+
 std::mutex coutMutex;
 
 class ThreadSafeMap
@@ -12,7 +13,7 @@ class ThreadSafeMap
 public:
     bool getString(int nKey, std::string& val)const
     {
-        boost::shared_lock<boost::shared_mutex> lock(mutex_); //many thread can enter here, except  
+        boost::shared_lock<boost::shared_mutex> lock(mutex_); //many thread can enter here 
         auto iter = m_map.find(nKey);
         if(iter!=m_map.end())
         {

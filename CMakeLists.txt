@@ -6,7 +6,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${cppSamples_SOURCE_DIR}/cmake")
 option(BUILD_C11 "Builds C11 Sample Project" OFF)
 option(BUILD_BOOST "Builds Boost Sample Project" OFF)
 option(BUILD_CUDA "Builds CUDA Sample Project" OFF)
-option(BUILD_INTELTBB "Builds TBB Sample Project" OFF)
+option(BUILD_INTELTBB "Builds TBB Sample Project" ON)
 option(BUILD_OPENCL "Builds OPENCL Sample Project" OFF)
 option(BUILD_OPENMP "Builds OPENMP Sample Project" OFF)
 option(BUILD_VULKAN "Builds VULKAN Sample Project" OFF)
@@ -31,7 +31,7 @@ endif()
 
 ###########  tbb
 if(BUILD_INTELTBB)
-find_package(TBB REQUIRED)
+    add_subdirectory(source/inteltbb)
 endif()
 
 ###########  vulkan
