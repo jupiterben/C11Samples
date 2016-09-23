@@ -1,9 +1,8 @@
 add_executable(mt s1.cpp)
 target_compile_features(mt PRIVATE cxx_auto_type)
 
-
-add_executable(callonce callonce.cpp)
-set_property(TARGET callonce  PROPERTY CXX_STANDARD 11)
+add_executable(future future.cpp)
+set_property(TARGET future  PROPERTY CXX_STANDARD 11)
 
 add_executable(waitCondition waitCondition.cpp)
 set_property(TARGET waitCondition  PROPERTY CXX_STANDARD 11)
@@ -16,3 +15,4 @@ if(${Boost_FOUND})
     target_link_libraries(sharedMutex ${Boost_LIBRARIES})
     set_property(TARGET sharedMutex  PROPERTY CXX_STANDARD 14)
 endif()
+

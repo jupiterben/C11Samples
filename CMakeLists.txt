@@ -3,75 +3,75 @@ cmake_minimum_required(VERSION 3.6)
 project(cppSamples)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${cppSamples_SOURCE_DIR}/CMake")
 
-option(BUILD_C11 "Builds C11 Sample Project" OFF)
-option(BUILD_BOOST "Builds Boost Sample Project" OFF)
-option(BUILD_CUDA "Builds CUDA Sample Project" OFF)
-option(BUILD_INTELTBB "Builds TBB Sample Project" OFF)
-option(BUILD_OPENCL "Builds OPENCL Sample Project" OFF)
-option(BUILD_OPENMP "Builds OPENMP Sample Project" OFF)
-option(BUILD_VULKAN "Builds VULKAN Sample Project" OFF)
-option(BUILD_MULTITHREAD "Builds MULTITHREAD Sample Project" OFF)
-option(BUILD_VTK "Builds VTK Sample Project" OFF)
-option(BUILD_AGG "Builds AGG Sample Project" OFF)
-option(BUILD_CGAL "Builds CGAL Sample Project" ON)
+option(BUILD_C11 "Builds C11 Sample Project" OFF)#1
+option(BUILD_BOOST "Builds Boost Sample Project" OFF)#2
+option(BUILD_CUDA "Builds CUDA Sample Project" OFF)#3
+option(BUILD_INTELTBB "Builds TBB Sample Project" OFF)#4
+option(BUILD_OPENCL "Builds OPENCL Sample Project" OFF)#5
+option(BUILD_OPENMP "Builds OPENMP Sample Project" OFF)#6
+option(BUILD_VULKAN "Builds VULKAN Sample Project" OFF)#7
+option(BUILD_MULTITHREAD "Builds MULTITHREAD Sample Project" ON)#8
+option(BUILD_VTK "Builds VTK Sample Project" OFF)#9
+option(BUILD_AGG "Builds AGG Sample Project" OFF )#10
+option(BUILD_CGAL "Builds CGAL Sample Project" OFF)#11
+option(BUILD_OPENGL "Builds OPENGL Sample Project" ON)#12
 
-
-####### buid c11
+####### buid c11  #1
 if(BUILD_C11)
     add_subdirectory(source/c11)
 endif()
 
-#######  opencl
-if(BUILD_OPENCL)
-    add_subdirectory(source/openCL)
-endif()
-
-########  openMP
-if(BUILD_OPENMP)
-    add_subdirectory(source/openMP)
-endif()
-
-###########  tbb
-if(BUILD_INTELTBB)
-    add_subdirectory(source/inteltbb)
-endif()
-
-###########  vulkan
-if(BUILD_VULKAN)
-find_package(Vulkan REQUIRED)
-endif()
-
-###########  cuda
-if(BUILD_CUDA)
-find_package(CUDA REQUIRED)
-endif()
-
-#######boost
+#######boost #2
 if(BUILD_BOOST)
      add_subdirectory(source/boost)
 endif()
 
-
-#########opengl
-#find_package(OpenGL REQUIRED)
-
-
-##########vtk
-if(BUILD_VTK)
-    add_subdirectory(source/vtk)
+###########  cuda #3
+if(BUILD_CUDA)
+    add_subdirectory(source/cuda)
 endif()
 
-##########MULTITHREAD
+###########  tbb $4
+if(BUILD_INTELTBB)
+    add_subdirectory(source/inteltbb)
+endif()
+
+#######  opencl #5
+if(BUILD_OPENCL)
+    add_subdirectory(source/openCL)
+endif()
+
+########  openMP #6
+if(BUILD_OPENMP)
+    add_subdirectory(source/openMP)
+endif()
+
+###########  vulkan $7
+if(BUILD_VULKAN)
+    add_subdirectory(source/vulKan)
+endif()
+
+########## MULTITHREAD #8
 if(BUILD_MULTITHREAD)
     add_subdirectory(source/multiThread)
 endif()
 
-#####
+##########  vtk  #9
+if(BUILD_VTK)
+    add_subdirectory(source/vtk)
+endif()
+
+#########  AGG  #10
 if(BUILD_AGG)
     add_subdirectory(source/agg)
 endif()
 
-
+#########  CGAL  #11
 if(BUILD_CGAL)
     add_subdirectory(source/cgal)
+endif()
+
+#########opengl   #12
+if(BUILD_OPENGL)
+    add_subdirectory(source/openGL)
 endif()
