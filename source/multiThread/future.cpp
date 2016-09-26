@@ -58,7 +58,7 @@ void test()
     wait_loop();
 }
 
-
+#include "./parallel_quick_sort.h"
 
 int main()
 {
@@ -88,6 +88,13 @@ int main()
         }
         t.join();
     }
+    std::list<int> intList{2,3,4,61,8,4,6,9};
+
+    parallel_quick_sort(intList);
+
     
+
+
+
     return 1;
 }

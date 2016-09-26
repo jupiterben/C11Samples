@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.6)
 
+
+add_subdirectory(3rd/googletest)
+
+
 project(cppSamples)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${cppSamples_SOURCE_DIR}/CMake")
 
@@ -16,62 +20,55 @@ option(BUILD_AGG "Builds AGG Sample Project" OFF )#10
 option(BUILD_CGAL "Builds CGAL Sample Project" OFF)#11
 option(BUILD_OPENGL "Builds OPENGL Sample Project" ON)#12
 
+
+
 ####### buid c11  #1
 if(BUILD_C11)
     add_subdirectory(source/c11)
 endif()
-
 #######boost #2
 if(BUILD_BOOST)
      add_subdirectory(source/boost)
 endif()
-
 ###########  cuda #3
 if(BUILD_CUDA)
     add_subdirectory(source/cuda)
 endif()
-
 ###########  tbb $4
 if(BUILD_INTELTBB)
     add_subdirectory(source/inteltbb)
 endif()
-
 #######  opencl #5
 if(BUILD_OPENCL)
     add_subdirectory(source/openCL)
 endif()
-
 ########  openMP #6
 if(BUILD_OPENMP)
     add_subdirectory(source/openMP)
 endif()
-
 ###########  vulkan $7
 if(BUILD_VULKAN)
     add_subdirectory(source/vulKan)
 endif()
-
 ########## MULTITHREAD #8
 if(BUILD_MULTITHREAD)
     add_subdirectory(source/multiThread)
 endif()
-
 ##########  vtk  #9
 if(BUILD_VTK)
     add_subdirectory(source/vtk)
 endif()
-
 #########  AGG  #10
 if(BUILD_AGG)
     add_subdirectory(source/agg)
 endif()
-
 #########  CGAL  #11
 if(BUILD_CGAL)
     add_subdirectory(source/cgal)
 endif()
-
 #########opengl   #12
 if(BUILD_OPENGL)
     add_subdirectory(source/openGL)
 endif()
+
+
