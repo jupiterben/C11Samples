@@ -16,6 +16,3 @@ target_link_libraries(GLS1 ${OPENGL_LIBRARIES} glew ${SDL2_LIBRARIES} ${SDL2_IMA
 set_property(TARGET GLS1  PROPERTY CXX_STANDARD 11)
 
 
-add_executable(test1 test1.cpp)
-target_include_directories(test1 PUBLIC "../../3rd/include")
-target_link_libraries(test1 gtest)

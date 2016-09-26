@@ -1,9 +1,8 @@
 cmake_minimum_required(VERSION 3.6)
 
+##add google test framework
 
-add_subdirectory(3rd/googletest)
-
-
+## all samples
 project(cppSamples)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${cppSamples_SOURCE_DIR}/CMake")
 
@@ -14,12 +13,12 @@ option(BUILD_INTELTBB "Builds TBB Sample Project" OFF)#4
 option(BUILD_OPENCL "Builds OPENCL Sample Project" OFF)#5
 option(BUILD_OPENMP "Builds OPENMP Sample Project" OFF)#6
 option(BUILD_VULKAN "Builds VULKAN Sample Project" OFF)#7
-option(BUILD_MULTITHREAD "Builds MULTITHREAD Sample Project" ON)#8
+option(BUILD_MULTITHREAD "Builds MULTITHREAD Sample Project" OFF)#8
 option(BUILD_VTK "Builds VTK Sample Project" OFF)#9
 option(BUILD_AGG "Builds AGG Sample Project" OFF )#10
 option(BUILD_CGAL "Builds CGAL Sample Project" OFF)#11
-option(BUILD_OPENGL "Builds OPENGL Sample Project" ON)#12
-
+option(BUILD_OPENGL "Builds OPENGL Sample Project" OFF)#12
+option(BUILD_GOOGLETEST "Builds google test Sample Project" ON)#12
 
 
 ####### buid c11  #1
@@ -71,4 +70,8 @@ if(BUILD_OPENGL)
     add_subdirectory(source/openGL)
 endif()
 
-
+#########opengl   #12
+if(BUILD_GOOGLETEST)
+    add_subdirectory(3rd/googletest)
+    add_subdirectory(source/gtest)
+endif()
