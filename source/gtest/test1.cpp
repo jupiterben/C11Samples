@@ -18,6 +18,10 @@ TEST(FooTest, HandleNoneZeroInput)
 {
     EXPECT_EQ(1, Foo(4, 10));
     EXPECT_EQ(6, Foo(30, 18));
+    EXPECT_EQ(5, Foo(12, 12) ) << " extra info";
+
+    ASSERT_TRUE(6==Foo(30,18));
+    ASSERT_FALSE(6==Foo(30,18));
 }
 
 int main(int argc, char* argv[])

@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION 3.6)
 
-##add google test framework
+include(CMakeToolsHelpers OPTIONAL)
 
 ## all samples
 project(cppSamples)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${cppSamples_SOURCE_DIR}/CMake")
+
 
 option(BUILD_C11 "Builds C11 Sample Project" OFF)#1
 option(BUILD_BOOST "Builds Boost Sample Project" OFF)#2
@@ -13,7 +14,7 @@ option(BUILD_INTELTBB "Builds TBB Sample Project" OFF)#4
 option(BUILD_OPENCL "Builds OPENCL Sample Project" OFF)#5
 option(BUILD_OPENMP "Builds OPENMP Sample Project" OFF)#6
 option(BUILD_VULKAN "Builds VULKAN Sample Project" OFF)#7
-option(BUILD_MULTITHREAD "Builds MULTITHREAD Sample Project" OFF)#8
+option(BUILD_MULTITHREAD "Builds MULTITHREAD Sample Project" ON)#8
 option(BUILD_VTK "Builds VTK Sample Project" OFF)#9
 option(BUILD_AGG "Builds AGG Sample Project" OFF )#10
 option(BUILD_CGAL "Builds CGAL Sample Project" OFF)#11
@@ -47,6 +48,9 @@ if(BUILD_OPENMP)
 endif()
 ###########  vulkan $7
 if(BUILD_VULKAN)
+    if (MSVC)
+        set( ENV{VULKAN_SDK} "D:/Develop/SDK/vulkansdk/1.0.8.0" )
+    endif()
     add_subdirectory(source/vulKan)
 endif()
 ########## MULTITHREAD #8

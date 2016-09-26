@@ -92,8 +92,6 @@ int main()
 
     parallel_quick_sort(intList);
 
-    
-
 
 
     return 1;
