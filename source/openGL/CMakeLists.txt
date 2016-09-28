@@ -1,10 +1,4 @@
 
-add_library(glew glew.c)
-target_include_directories(glew PUBLIC ".")
-target_compile_definitions(glew PRIVATE GLEW_STATIC)
-
-
-
 #find_package(SDL2)
 #find_package(SDL2_image)
 find_package(OpenGL REQUIRED)

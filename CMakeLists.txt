@@ -71,6 +71,7 @@ if(BUILD_CGAL)
 endif()
 #########opengl   #12
 if(BUILD_OPENGL)
+    add_subdirectory(3rd/glew)
     add_subdirectory(3rd/glfw)
      add_subdirectory(source/openGL)
 endif()
