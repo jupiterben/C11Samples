@@ -3,7 +3,8 @@
 
 #include <fstream>
 #include <sstream>
-std::string readFile(const std::string fileName)
+
+std::string readFile(const std::string& fileName)
 {
 	std::ifstream fs(fileName);
 	if (!fs.is_open())
@@ -25,7 +26,7 @@ std::vector<cl_platform_id> getPlatforms()
 	
 	std::vector<cl_platform_id> platforms;
 	platforms.resize(numPlatform);
-	status = clGetPlatformIDs(numPlatform, platforms.data(), nullptr);
+	status = clGetPlatformIDs(platforms.size(), platforms.data(), nullptr);
 	return std::move(platforms);
 }
 
@@ -46,25 +47,48 @@ std::vector<cl_device_id> getDevices(cl_platform_id platform)
 	return std::move(devices);
 }
 
+#define STRINGIFY(x) #x
+const char* kernalScript = 
+#include "kernal.c"
+;
+
+#include <iostream>
 
 int main()
 {
+	cl_int errcode_ret=0;
 
 	auto platforms = getPlatforms();
-	auto devices = getDevices(platforms.front());
-	cl_context  context = clCreateContext(nullptr, 1, devices.data(), nullptr, nullptr, nullptr);
-	
-	std::string source = readFile("E:\\360Cloud\\Projects\\cppSamples\\source\\openCL\\kernal.cl");
-	const char* s = source.c_str();
-	cl_program program = clCreateProgramWithSource(context, 1, &s, 0, 0);
-	
 
+	for(auto platform : platforms)
+	{
+		auto devices = getDevices(platform);
+		for(auto device : devices)
+		{
+			cl_context  context = clCreateContext(nullptr, 1, &device, nullptr, nullptr, &errcode_ret);
+			if(context)
+			{
+				cl_program program = clCreateProgramWithSource(context, 1, &kernalScript, 0, &errcode_ret);	
+				if(program)
+				{
+					std::cout << "create program" << std::endl;
+				}
+				else
+				{
+					std::cout << CLErrString(errcode_ret);
+				}
+				clReleaseContext(context);
+			}
+			else{
+				std::cout<<CLErrString(errcode_ret);
+			}				
+		}
+
+		
+		
+	}
 	
-	
-	clReleaseContext(context);
   
-
-
     return 1;
 }
 
