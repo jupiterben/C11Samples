@@ -58,7 +58,7 @@ void test()
     wait_loop();
 }
 
-#include "./parallel_quick_sort.h"
+#include "parallel_quick_sort.h"
 
 int main()
 {

@@ -2,15 +2,16 @@
  #include "GL/glew.h"
  #include <SDL2/SDL.h>
  #include <SDL2/SDL_opengl.h>
- #include <SDL2/SDL_image.h>
- 
+ #include "renderGL.h"
 
- class RenderGL
+ class TWindow
  {
 public:
-    virtual void initGL(){}
-    virtual void drawGL(){}
+
+protected:
+
  };
+
 
 class SDLGL
 {
@@ -65,13 +66,13 @@ protected:
 };
 
 
- void LoadImage()
- {
-     SDL_Surface *tmp=IMG_Load("water.png");
-     if(tmp)
-     {
-        tmp = SDL_ConvertSurfaceFormat(tmp,SDL_PIXELFORMAT_ABGR8888,0);
-        //texture= glGenerateMipmap(GL_TEXTURE_2D,4,tmp->w,tmp->h,GL_RGBA,GL_UNSIGNED_BYTE,tmp->pixels);
-        SDL_FreeSurface(tmp);
-     }
- }
+//  void LoadImage()
+//  {
+//      SDL_Surface *tmp=IMG_Load("water.png");
+//      if(tmp)
+//      {
+//         tmp = SDL_ConvertSurfaceFormat(tmp,SDL_PIXELFORMAT_ABGR8888,0);
+//         //texture= glGenerateMipmap(GL_TEXTURE_2D,4,tmp->w,tmp->h,GL_RGBA,GL_UNSIGNED_BYTE,tmp->pixels);
+//         SDL_FreeSurface(tmp);
+//      }
+//  }

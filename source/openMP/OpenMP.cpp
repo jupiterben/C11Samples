@@ -2,7 +2,14 @@
 #include <chrono>
 #include <iostream>
 #include <array>
+/*
+@startuml
+start
+fork
+    :add 
 
+@enduml
+*/
 
 //sum up a int array 
 template<class T>
@@ -11,17 +18,25 @@ void SumUp(const T& a )
     int sum = 0;
    
     int coreNum = omp_get_num_procs();//get the number of core
-    int* sumArray = new int[coreNum];// 
-    for (int i=0;i<coreNum;i++)//
-        sumArray[i] = 0;
- #pragma omp parallel for
-     for (int i=0;i<(int)a.size();i++)
-     {
-         int k = omp_get_thread_num();//获得每个线程的ID
-         sumArray[k] = sumArray[k]+a[i];
-     }
-     for (int i = 0;i<coreNum;i++)
-         sum = sum + sumArray[i];
+    if(coreNum>1)
+    {
+        int* sumArray = new int[coreNum];// 
+            for (int i=0;i<coreNum;i++)//
+                sumArray[i] = 0;
+            #pragma omp parallel for
+            for (int i=0;i<(int)a.size();i++)
+            {
+                int k = omp_get_thread_num();//获得每个线程的ID
+                sumArray[k] = sumArray[k]+a[i];
+            }
+            for (int i = 0;i<coreNum;i++)
+                sum = sum + sumArray[i];
+    }
+    else
+    {
+        
+    }
+    
      std::cout<<"sum: "<<sum<<std::endl;     
      delete []sumArray;
 }
