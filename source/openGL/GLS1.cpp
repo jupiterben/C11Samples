@@ -2,6 +2,13 @@
 #include <gl/glew.h>
 #include "glfwWindow.h"
 #include <glm/glm.hpp>
+#include <rapidjson/rapidjson.h>
+#include <iostream>
+
+#define STRINGRIFY(x) #x
+char* strjson = STRINGRIFY(
+    #include "scenen.json"
+);
 
 int main(void)
 {
@@ -25,5 +32,7 @@ int main(void)
         glEnd();
     };
    
+    std::cout<< strjson << std::endl;
+
     w.run();
 }
