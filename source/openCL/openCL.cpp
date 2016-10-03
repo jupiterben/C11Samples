@@ -49,7 +49,7 @@ std::vector<cl_device_id> getDevices(cl_platform_id platform)
 
 #define STRINGIFY(x) #x
 const char* kernalScript = 
-#include "kernal.c"
+#include "code/kernal.c"
 ;
 
 #include <iostream>

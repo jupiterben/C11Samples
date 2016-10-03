@@ -1,24 +1,32 @@
  #pragma once
+
+#include "renderWindow.h"
+
  #include <SDL2/SDL.h>
  #include <SDL2/SDL_opengl.h>
-
-
 
 class SDLGL
 {
 public: 
-    SDLGL():pRenderer(nullptr){  
+    SDLGL()
+    {  
         quit = false;
         window  = nullptr;
+        init();
+    }   
+    ~SDLGL()
+    {
+        SDL_DestroyWindow(window);
+        window = NULL;
+        SDL_Quit();
     }
-    RenderGL* pRenderer;
 
     void run()
     {
         quit = false;
-        init();
         while (!quit)
         {
+            SDL_Event sdlEvent;
             while(SDL_PollEvent(&sdlEvent))
             {
                 if(sdlEvent.type == SDL_QUIT)
@@ -26,19 +34,15 @@ public:
                     quit = true;
                 }
             }
-            if(pRenderer)
-                pRenderer->drawGL();
+            if(fDraw)
+                fDraw();
             SDL_Delay(16);
-        }
-        SDL_DestroyWindow(window);
-        window = NULL;
-        SDL_Quit();
+        }       
     }
 protected:
     bool quit;
     SDL_Window* window;
     SDL_GLContext glContext;
-    SDL_Event sdlEvent;
 
     void init()
     {
@@ -50,9 +54,8 @@ protected:
         window = SDL_CreateWindow("SDL+OpenGL", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,600,600,SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN );
         glContext = SDL_GL_CreateContext(window);
         SDL_GL_SetSwapInterval(1);
-        glewInit();
-        if(pRenderer)
-            pRenderer->initGL();
+        if(fInit)
+            fInit();
     }
 };
 

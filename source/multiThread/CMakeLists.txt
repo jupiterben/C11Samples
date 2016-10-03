@@ -5,7 +5,7 @@ add_executable(future future.cpp)
 set_property(TARGET future  PROPERTY CXX_STANDARD 11)
 
 add_executable(waitCondition waitCondition.cpp)
-set_property(TARGET waitCondition  PROPERTY CXX_STANDARD 11)
+set_target_properties( waitCondition PROPERTIES CXX_STANDARD 11)
 
 #shared mutex using boost thread library
 find_package(Boost COMPONENTS thread system)
@@ -15,4 +15,8 @@ if(${Boost_FOUND})
     target_link_libraries(sharedMutex ${Boost_LIBRARIES})
     set_property(TARGET sharedMutex  PROPERTY CXX_STANDARD 14)
 endif()
+
+
+add_executable(SP_atomic SP_atomic.cpp)
+set_target_properties( SP_atomic PROPERTIES CXX_STANDARD 11)
 

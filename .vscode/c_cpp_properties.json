@@ -2,8 +2,7 @@
     "configurations": [
         {
             "name": "Mac",
-            "includePath": ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/",
-            "/usr/local/"],
+            "includePath": ["/usr/local/include"],
             "browse" : {
                 "limitSymbolsToIncludedHeaders" : true,
                 "databaseFilename" : ""

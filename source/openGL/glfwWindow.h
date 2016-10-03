@@ -1,15 +1,6 @@
 #pragma once
-#include <functional>
 
- class RenderWindow
- {
-public:
-    std::function<void()> fInit;
-    std::function<void()> fDraw;
- };
-
-
-
+#include "renderWindow.h"
 #include <GLFW/glfw3.h>
 
 class glfwWindow : public RenderWindow
@@ -45,7 +36,7 @@ public:
         while (!glfwWindowShouldClose(window))
         {
             /* Render here */
-            glClear(GL_COLOR_BUFFER_BIT);
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
             if(fDraw)
                 fDraw();
