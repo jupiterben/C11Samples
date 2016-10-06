@@ -1,8 +1,3 @@
-#ifndef STRINGIFY
-#define STRINGIFY(x) x
-#endif
-STRINGIFY(
-
 
     __kernel void vector_add_gpu (__global const float* src_a,  
                          __global const float* src_b,  
@@ -15,7 +10,3 @@ STRINGIFY(
      
           
     }
-
-
-
-)

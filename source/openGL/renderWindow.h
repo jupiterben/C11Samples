@@ -8,4 +8,5 @@ public:
 
     std::function<void()> fInit;
     std::function<void()> fDraw;
+    std::function<void(int,int)>  onSize;
  };

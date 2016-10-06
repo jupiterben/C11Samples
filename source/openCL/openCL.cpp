@@ -47,15 +47,25 @@ std::vector<cl_device_id> getDevices(cl_platform_id platform)
 	return std::move(devices);
 }
 
-#define STRINGIFY(x) #x
-const char* kernalScript = 
-#include "code/kernal.c"
-;
+const char* kernalScript = R"(
+	
+    __kernel void vector_add_gpu (__global const float* src_a,  
+                         __global const float* src_b,  
+                         __global float* res,  
+               const int num)  
+    {  
+       const int idx = get_global_id(0);  
+       if (idx < num)  
+          res[idx] = src_a[idx] + src_b[idx]; 
+    }
+)";
 
 #include <iostream>
 
 int main()
 {
+	std::cout<<kernalScript;
+
 	cl_int errcode_ret=0;
 
 	auto platforms = getPlatforms();

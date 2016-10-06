@@ -2,13 +2,12 @@
 #include <gl/glew.h>
 #include "glfwWindow.h"
 #include <glm/glm.hpp>
-#include <rapidjson/rapidjson.h>
 #include <iostream>
 
-#define STRINGRIFY(x) #x
-char* strjson = STRINGRIFY(
-    #include "scenen.json"
-);
+const char * vShader = R"(
+
+)";
+
 
 int main(void)
 {
@@ -25,14 +24,13 @@ int main(void)
 
     w.fDraw = []()
     {
-        glBegin(GL_TRIANGLES);
+
+       glBegin(GL_TRIANGLES);
             glVertex3d(0.5,0.5,0);
             glVertex3d(0.5,0,0);
             glVertex3d(0,0.5,0);
-        glEnd();
+       glEnd();
     };
    
-    std::cout<< strjson << std::endl;
-
     w.run();
 }
