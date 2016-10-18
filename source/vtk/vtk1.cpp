@@ -1,64 +1,86 @@
-#include "vtkCylinderSource.h"
-#include "vtkPolyDataMapper.h"
-#include "vtkActor.h"
-#include "vtkRenderer.h"
-#include "vtkRenderWindow.h"
-#include "vtkRenderWindowInteractor.h"
-#include "vtkProperty.h"
-#include "vtkCamera.h"
-#include "vtkSmartPointer.h"
- 
-int main()
+#include <vtkConeSource.h>
+#include <vtkPolyData.h>
+#include <vtkSmartPointer.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkActor.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
+#include <vtkRenderWindowInteractor.h>
+#include <vtkTextActor.h>
+#include <vtkTextProperty.h>
+#include <string>
+#include <algorithm>
+#include <vtkScaledTextActor.h>
+
+#ifdef WIN32
+#define DIR_CHAR '\\'
+#else
+#define DIR_CHAR '/'
+#endif
+
+#define vtkNew(T)  vtkSmartPointer<T>::New()
+
+
+
+std::string currentSourceDir()
 {
-  // This creates a polygonal cylinder model with eight circumferential facets
-  // (i.e, in practice an octagonal prism).
-  vtkSmartPointer<vtkCylinderSource> cylinder =
-    vtkSmartPointer<vtkCylinderSource>::New();
-  cylinder->SetResolution(8);
- 
-  // The mapper is responsible for pushing the geometry into the graphics library.
-  // It may also do color mapping, if scalars or other attributes are defined.
-  vtkSmartPointer<vtkPolyDataMapper> cylinderMapper =
-    vtkSmartPointer<vtkPolyDataMapper>::New();
-  cylinderMapper->SetInputConnection(cylinder->GetOutputPort());
- 
-  // The actor is a grouping mecha`nism: besides the geometry (mapper), it
-  // also has a property, transformation matrix, and/or texture map.
-  // Here we set its color and rotate it around the X and Y axes.
-  vtkSmartPointer<vtkActor> cylinderActor =
-    vtkSmartPointer<vtkActor>::New();
-  cylinderActor->SetMapper(cylinderMapper);
-  cylinderActor->GetProperty()->SetColor(1.0000, 0.3882, 0.2784);
-  cylinderActor->RotateX(30.0);
-  cylinderActor->RotateY(-45.0);
- 
-  // The renderer generates the image
-  // which is then displayed on the render window.
-  // It can be thought of as a scene to which the actor is added
-  vtkSmartPointer<vtkRenderer> renderer =
-    vtkSmartPointer<vtkRenderer>::New();
-  renderer->AddActor(cylinderActor);
-  renderer->SetBackground(0.1, 0.2, 0.4);
-  // Zoom in a little by accessing the camera and invoking its "Zoom" method.
-  renderer->ResetCamera();
-  renderer->GetActiveCamera()->Zoom(1.5);
- 
-  // The render window is the actual GUI window
-  // that appears on the computer screen
-  vtkSmartPointer<vtkRenderWindow> renderWindow =
-    vtkSmartPointer<vtkRenderWindow>::New();
-  renderWindow->SetSize(200, 200);
-  renderWindow->AddRenderer(renderer);
- 
-  // The render window interactor captures mouse events
-  // and will perform appropriate camera or actor manipulation
-  // depending on the nature of the events.
-  vtkSmartPointer<vtkRenderWindowInteractor> renderWindowInteractor =
-    vtkSmartPointer<vtkRenderWindowInteractor>::New();
-  renderWindowInteractor->SetRenderWindow(renderWindow);
- 
-  // This starts the event loop and as a side effect causes an initial render.
-  renderWindowInteractor->Start();
- 
-  return 0;
+	std::string strFile = __FILE__;
+	auto pos = strFile.find_last_of(DIR_CHAR);
+	return strFile.substr(0, pos + 1);
+}
+
+auto textActorText(int size, int posx, int posy)
+{
+	auto textActor = vtkNew(vtkTextActor);
+
+	textActor->SetDisplayPosition(posx, posy);
+	textActor->SetInput("3D Image");
+
+	auto textProp = textActor->GetTextProperty();
+	textProp->SetFontSize(size);
+	textProp->SetColor(1, 0, 0);
+	textProp->SetFontFamily(VTK_FONT_FILE);
+
+	std::string fontFilePath = currentSourceDir().append("calibri.ttf");
+	textProp->SetFontFile(fontFilePath.c_str());
+
+	return textActor;
+}
+
+int main(int, char *[])
+{
+	//Create a cone
+	auto  coneSource = vtkNew(vtkConeSource);
+	coneSource->Update();
+
+	//Create a mapper and actor
+	auto mapper = vtkNew(vtkPolyDataMapper);
+	mapper->SetInputConnection(coneSource->GetOutputPort());
+
+	auto actor = vtkNew(vtkActor);
+	actor->SetMapper(mapper);
+
+	//Create a renderer, render window, and interactor
+	auto renderer = vtkNew(vtkRenderer);
+
+	auto renderWindow = vtkNew(vtkRenderWindow);
+
+	renderWindow->AddRenderer(renderer);
+
+	auto renderWindowInteractor = vtkNew(vtkRenderWindowInteractor);
+	renderWindowInteractor->SetRenderWindow(renderWindow);
+
+	//Add the actors to the scenePos
+    renderer->AddActor(textActorText(90,10,10));
+	renderer->AddActor(textActorText(12, 20, 20));
+	renderer->AddActor(textActorText(14,30,30));
+
+	renderer->AddActor(actor);
+	renderer->SetBackground(.3, .2, .1); // Background color dark red
+
+	//Render and interact
+	renderWindow->Render();
+	renderWindowInteractor->Start();
+
+	return EXIT_SUCCESS;
 }

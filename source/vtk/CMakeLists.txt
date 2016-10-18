@@ -1,14 +1,22 @@
-find_package(VTK)
+cmake_minimum_required(VERSION 2.8)
+ 
+PROJECT(Cone)
 
-if(${VTK_FOUND})
+if(MSVC)
+  set(VTK_DIR "D:/Develop/Source/VTK-7.0.0/build")
+endif()
+ 
+find_package(VTK REQUIRED)
+include(${VTK_USE_FILE})
+ 
+#add_executable(Cone MACOSX_BUNDLE vtk1.cpp)
+add_executable(Cone  vtk1.cpp)
 
-add_executable(vtk1 vtk1.cpp)
-target_include_directories(vtk1 PUBLIC ${VTK_USE_FILE})
+set_target_properties( Cone PROPERTIES CXX_STANDARD 14)
+
 
 if(VTK_LIBRARIES)
-  target_link_libraries(vtk1 ${VTK_LIBRARIES})
+  target_link_libraries(Cone ${VTK_LIBRARIES})
 else()
-  target_link_libraries(vtk1 vtkHybrid vtkWidgets)
-endif()
-
+  target_link_libraries(Cone vtkHybrid vtkWidgets)
 endif()

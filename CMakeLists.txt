@@ -15,12 +15,14 @@ option(BUILD_OPENCL "Builds OPENCL Sample Project" OFF)#5
 option(BUILD_OPENMP "Builds OPENMP Sample Project" OFF)#6
 option(BUILD_VULKAN "Builds VULKAN Sample Project" OFF)#7
 option(BUILD_MULTITHREAD "Builds MULTITHREAD Sample Project" OFF)#8
-option(BUILD_VTK "Builds VTK Sample Project" OFF)#9
+option(BUILD_VTK "Builds VTK Sample Project" ON)#9
 option(BUILD_AGG "Builds AGG Sample Project" OFF )#10
 option(BUILD_CGAL "Builds CGAL Sample Project" OFF)#11
 option(BUILD_OPENGL "Builds OPENGL Sample Project" OFF)#12
 option(BUILD_GOOGLETEST "Builds google test Sample Project" OFF)#12
-option(BUILD_LIBUV "Builds libuv Sample Project" OFF)#12
+option(BUILD_LIBUV "Builds libuv Sample Project" OFF)#13
+option(BUILD_QT5 "Builds QT5 Sample Project" OFF)#14
+
 
 
 ####### buid c11  #1
@@ -84,7 +86,11 @@ if(BUILD_GOOGLETEST)
 endif()
 
 ###############
-#add_subdirectory(source/libuv)
+if(BUILD_LIBUV)
+add_subdirectory(source/libuv)
+endif()
 
+#############
+if(BUILD_QT5)
 add_subdirectory(source/qt5)
-
+endif()
