@@ -7,7 +7,7 @@ project(cppSamples)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${cppSamples_SOURCE_DIR}/CMake")
 
 
-option(BUILD_C11 "Builds C11 Sample Project" OFF)#1
+option(BUILD_C11 "Builds C11 Sample Project" ON)#1
 option(BUILD_BOOST "Builds Boost Sample Project" OFF)#2
 option(BUILD_CUDA "Builds CUDA Sample Project" OFF)#3
 option(BUILD_INTELTBB "Builds TBB Sample Project" OFF)#4
@@ -15,13 +15,13 @@ option(BUILD_OPENCL "Builds OPENCL Sample Project" OFF)#5
 option(BUILD_OPENMP "Builds OPENMP Sample Project" OFF)#6
 option(BUILD_VULKAN "Builds VULKAN Sample Project" OFF)#7
 option(BUILD_MULTITHREAD "Builds MULTITHREAD Sample Project" OFF)#8
-option(BUILD_VTK "Builds VTK Sample Project" ON)#9
+option(BUILD_VTK "Builds VTK Sample Project" OFF)#9
 option(BUILD_AGG "Builds AGG Sample Project" OFF )#10
 option(BUILD_CGAL "Builds CGAL Sample Project" OFF)#11
 option(BUILD_OPENGL "Builds OPENGL Sample Project" OFF)#12
-option(BUILD_GOOGLETEST "Builds google test Sample Project" OFF)#12
-option(BUILD_LIBUV "Builds libuv Sample Project" OFF)#13
-option(BUILD_QT5 "Builds QT5 Sample Project" OFF)#14
+option(BUILD_GOOGLETEST "Builds google test Sample Project" OFF)#13
+option(BUILD_LIBUV "Builds libuv Sample Project" OFF)#14
+option(BUILD_QT5 "Builds QT5 Sample Project" OFF)#15
 
 
 
@@ -79,18 +79,18 @@ if(BUILD_OPENGL)
     add_subdirectory(source/openGL)
 endif()
 
-#########opengl   #12
+#########opengl   #13
 if(BUILD_GOOGLETEST)
     add_subdirectory(3rd/googletest)
     add_subdirectory(source/gtest)
 endif()
 
-###############
+############### 14
 if(BUILD_LIBUV)
 add_subdirectory(source/libuv)
 endif()
 
-#############
+############# 15
 if(BUILD_QT5)
 add_subdirectory(source/qt5)
 endif()

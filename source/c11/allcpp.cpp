@@ -1,4 +1,3 @@
-#include "../cpputil/util.h"
 
 /*----------
 alias template kind of like typedef, 
@@ -122,9 +121,10 @@ void testLambda()
 
 int main()
 {
+    //testAlignof();
+    //testLambda();
 
-    testAlignof();
-    testLambda();
+
 
     return 1;
 }
