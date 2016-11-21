@@ -18,7 +18,7 @@ option(BUILD_MULTITHREAD "Builds MULTITHREAD Sample Project" OFF)#8
 option(BUILD_VTK "Builds VTK Sample Project" OFF)#9
 option(BUILD_AGG "Builds AGG Sample Project" OFF )#10
 option(BUILD_CGAL "Builds CGAL Sample Project" OFF)#11
-option(BUILD_OPENGL "Builds OPENGL Sample Project" OFF)#12
+option(BUILD_OPENGL "Builds OPENGL Sample Project" ON)#12
 option(BUILD_GOOGLETEST "Builds google test Sample Project" OFF)#13
 option(BUILD_LIBUV "Builds libuv Sample Project" OFF)#14
 option(BUILD_QT5 "Builds QT5 Sample Project" OFF)#15

@@ -1,5 +1,5 @@
 
-#include <gl/glew.h>
+#include <GL/glew.h>
 #include "glfwWindow.h"
 #include <glm/glm.hpp>
 #include <iostream>
