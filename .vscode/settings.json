@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite default and user settings.
 {
     "cmake.buildDirectory": "${workspaceRoot}/../../../build/cppSamples",
-    "cmake.experimental.enableTargetDebugging" : true,
-    "cmake.generator.windows": "Visual Studio 10 2010 Win64"
+    "cmake.experimental.enableTargetDebugging" : true ,
+    "clang.cxxflags": ["-std=c++14"]
 }

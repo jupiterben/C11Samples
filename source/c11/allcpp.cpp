@@ -4,6 +4,9 @@ alias template kind of like typedef,
 using : right to left  and can be template , more 
 typedef : left to right 
 ----------*/
+#include <iostream>
+#define OUTPUT(x) std::cout<< #x <<":"<<(x) <<std::endl;
+#include <string>
 template<class T> using ptr = T* ;
 template<class T> using mystring = std::basic_string<T, std::char_traits<T> >;
 void aliasTemplate()
@@ -36,6 +39,7 @@ struct mystructPack
 };
 #pragma pack()
 
+#include <cstddef>
 void testAlignof()
 {
     OUTPUT( alignof(mystructPack) );
@@ -48,6 +52,8 @@ void testAlignof()
 }
 
 /* -----  initializer_list -------*/
+#include <vector>
+#include <map>
 class MyClassInit
 {
 public: 
@@ -81,6 +87,8 @@ class DerivedA : public BaseA
     void f2(int) override ; //
 };
 /*------- range for -----------*/
+#include <vector>
+#include <map>
 void testRangeFor()
 {
     std::vector<int> vList= {1,2,3};
@@ -108,6 +116,7 @@ void testStrongEnums(){
     it  = wt;
 }
 /*-------- lambda ----------*/
+#include <functional>
 void testLambda()
 {
     //Fibonacci function
@@ -121,10 +130,8 @@ void testLambda()
 
 int main()
 {
-    //testAlignof();
-    //testLambda();
-
-
+    testAlignof();
+    testLambda();
 
     return 1;
 }
