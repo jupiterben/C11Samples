@@ -7,11 +7,11 @@ project(cppSamples)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${cppSamples_SOURCE_DIR}/CMake")
 
 
-option(BUILD_C11 "Builds C11 Sample Project" ON)#1
+option(BUILD_C11 "Builds C11 Sample Project" OFF)#1
 option(BUILD_BOOST "Builds Boost Sample Project" OFF)#2
 option(BUILD_CUDA "Builds CUDA Sample Project" OFF)#3
 option(BUILD_INTELTBB "Builds TBB Sample Project" OFF)#4
-option(BUILD_OPENCL "Builds OPENCL Sample Project" OFF)#5
+option(BUILD_OPENCL "Builds OPENCL Sample Project" ON)#5
 option(BUILD_OPENMP "Builds OPENMP Sample Project" OFF)#6
 option(BUILD_VULKAN "Builds VULKAN Sample Project" OFF)#7
 option(BUILD_MULTITHREAD "Builds MULTITHREAD Sample Project" OFF)#8

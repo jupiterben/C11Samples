@@ -4,7 +4,7 @@
 #else
 #include "CL/cl.h"
 #endif
-
+#include <stdio.h>
 
 static const char *
 CLErrString(cl_int status) {
