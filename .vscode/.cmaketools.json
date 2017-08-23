@@ -1,10 +1,1223 @@
 {
-  "selectedBuildType": "Debug",
   "variant": {
     "label": "Debug",
     "keywordSettings": {
       "buildType": "debug"
     },
     "description": "Emit debug information without performing optimizations"
+  },
+  "activeEnvironments": [
+    "Visual C++ 14.0 - amd64"
+  ],
+  "codeModel": {
+    "configurations": [
+      {
+        "name": "Debug",
+        "projects": [
+          {
+            "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw",
+            "name": "GLFW",
+            "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw",
+            "targets": [
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/Debug/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/Debug/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/Debug/glfw3.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1  ",
+                    "defines": [
+                      "_CRT_SECURE_NO_WARNINGS",
+                      "_GLFW_USE_CONFIG_H"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/include"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/src"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "C",
+                    "sources": [
+                      "context.c",
+                      "init.c",
+                      "input.c",
+                      "monitor.c",
+                      "vulkan.c",
+                      "window.c",
+                      "win32_init.c",
+                      "win32_joystick.c",
+                      "win32_monitor.c",
+                      "win32_time.c",
+                      "win32_tls.c",
+                      "win32_window.c",
+                      "wgl_context.c",
+                      "egl_context.c"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "internal.h",
+                      "../../../build/3rd/glfw/src/glfw_config.h",
+                      "../include/GLFW/glfw3.h",
+                      "../include/GLFW/glfw3native.h",
+                      "win32_platform.h",
+                      "win32_joystick.h",
+                      "wgl_context.h",
+                      "egl_context.h",
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glfw3.lib",
+                "linkFlags": "/machine:x64",
+                "linkerLanguage": "C",
+                "name": "glfw",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw/src",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw",
+                "type": "UTILITY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "E:/Seafile/Projects/cppSamples/build",
+            "name": "cppSamples",
+            "sourceDirectory": "E:/Seafile/Projects/cppSamples",
+            "targets": [
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glew/Debug/glew.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glew/Debug/glew.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glew/Debug/glew.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glew",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1  ",
+                    "defines": [
+                      "GLEW_STATIC"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glew/."
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "C",
+                    "sources": [
+                      "glew.c"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glew.lib",
+                "linkFlags": "/machine:x64",
+                "linkerLanguage": "C",
+                "name": "glew",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glew",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/Debug/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/Debug/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/Debug/glfw3.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1  ",
+                    "defines": [
+                      "_CRT_SECURE_NO_WARNINGS",
+                      "_GLFW_USE_CONFIG_H"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/include"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/src"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "C",
+                    "sources": [
+                      "context.c",
+                      "init.c",
+                      "input.c",
+                      "monitor.c",
+                      "vulkan.c",
+                      "window.c",
+                      "win32_init.c",
+                      "win32_joystick.c",
+                      "win32_monitor.c",
+                      "win32_time.c",
+                      "win32_tls.c",
+                      "win32_window.c",
+                      "wgl_context.c",
+                      "egl_context.c"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "internal.h",
+                      "../../../build/3rd/glfw/src/glfw_config.h",
+                      "../include/GLFW/glfw3.h",
+                      "../include/GLFW/glfw3native.h",
+                      "win32_platform.h",
+                      "win32_joystick.h",
+                      "wgl_context.h",
+                      "egl_context.h",
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glfw3.lib",
+                "linkFlags": "/machine:x64",
+                "linkerLanguage": "C",
+                "name": "glfw",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw/src",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/source/openGL/Debug/GLS1.exe",
+                  "E:/Seafile/Projects/cppSamples/build/source/openGL/Debug/GLS1.lib",
+                  "E:/Seafile/Projects/cppSamples/build/source/openGL/Debug/GLS1.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/source/openGL",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1  ",
+                    "defines": [
+                      "GLEW_STATIC"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/source/openGL/../../3rd/glfw/incldue"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/source/openGL/../../3rd/glm"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/source/openGL/../../3rd/rapidjson/include"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glew/."
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/include"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "GLS1.cpp"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "GLS1.exe",
+                "linkFlags": "/machine:x64 /debug /INCREMENTAL /subsystem:console",
+                "linkLanguageFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1",
+                "linkLibraries": "glu32.lib opengl32.lib ..\\..\\3rd\\glew\\Debug\\glew.lib ..\\..\\3rd\\glfw\\src\\Debug\\glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+                "linkerLanguage": "CXX",
+                "name": "GLS1",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/source/openGL",
+                "type": "EXECUTABLE"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/0fb28925fbe2a0cac8903d7d73953329/generate.stamp.rule"
+                    ]
+                  }
+                ],
+                "fullName": "ZERO_CHECK",
+                "name": "ZERO_CHECK",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples",
+                "type": "UTILITY"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Release",
+        "projects": [
+          {
+            "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw",
+            "name": "GLFW",
+            "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw",
+            "targets": [
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/Release/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/Release/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/Release/glfw3.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /MD /O2 /Ob2 /DNDEBUG  ",
+                    "defines": [
+                      "_CRT_SECURE_NO_WARNINGS",
+                      "_GLFW_USE_CONFIG_H"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/include"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/src"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "C",
+                    "sources": [
+                      "context.c",
+                      "init.c",
+                      "input.c",
+                      "monitor.c",
+                      "vulkan.c",
+                      "window.c",
+                      "win32_init.c",
+                      "win32_joystick.c",
+                      "win32_monitor.c",
+                      "win32_time.c",
+                      "win32_tls.c",
+                      "win32_window.c",
+                      "wgl_context.c",
+                      "egl_context.c"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "internal.h",
+                      "../../../build/3rd/glfw/src/glfw_config.h",
+                      "../include/GLFW/glfw3.h",
+                      "../include/GLFW/glfw3native.h",
+                      "win32_platform.h",
+                      "win32_joystick.h",
+                      "wgl_context.h",
+                      "egl_context.h",
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glfw3.lib",
+                "linkFlags": "/machine:x64",
+                "linkerLanguage": "C",
+                "name": "glfw",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw/src",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw",
+                "type": "UTILITY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "E:/Seafile/Projects/cppSamples/build",
+            "name": "cppSamples",
+            "sourceDirectory": "E:/Seafile/Projects/cppSamples",
+            "targets": [
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glew/Release/glew.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glew/Release/glew.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glew/Release/glew.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glew",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /MD /O2 /Ob2 /DNDEBUG  ",
+                    "defines": [
+                      "GLEW_STATIC"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glew/."
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "C",
+                    "sources": [
+                      "glew.c"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glew.lib",
+                "linkFlags": "/machine:x64",
+                "linkerLanguage": "C",
+                "name": "glew",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glew",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/Release/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/Release/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/Release/glfw3.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /MD /O2 /Ob2 /DNDEBUG  ",
+                    "defines": [
+                      "_CRT_SECURE_NO_WARNINGS",
+                      "_GLFW_USE_CONFIG_H"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/include"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/src"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "C",
+                    "sources": [
+                      "context.c",
+                      "init.c",
+                      "input.c",
+                      "monitor.c",
+                      "vulkan.c",
+                      "window.c",
+                      "win32_init.c",
+                      "win32_joystick.c",
+                      "win32_monitor.c",
+                      "win32_time.c",
+                      "win32_tls.c",
+                      "win32_window.c",
+                      "wgl_context.c",
+                      "egl_context.c"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "internal.h",
+                      "../../../build/3rd/glfw/src/glfw_config.h",
+                      "../include/GLFW/glfw3.h",
+                      "../include/GLFW/glfw3native.h",
+                      "win32_platform.h",
+                      "win32_joystick.h",
+                      "wgl_context.h",
+                      "egl_context.h",
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glfw3.lib",
+                "linkFlags": "/machine:x64",
+                "linkerLanguage": "C",
+                "name": "glfw",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw/src",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/source/openGL/Release/GLS1.exe",
+                  "E:/Seafile/Projects/cppSamples/build/source/openGL/Release/GLS1.lib",
+                  "E:/Seafile/Projects/cppSamples/build/source/openGL/Release/GLS1.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/source/openGL",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG  ",
+                    "defines": [
+                      "GLEW_STATIC"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/source/openGL/../../3rd/glfw/incldue"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/source/openGL/../../3rd/glm"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/source/openGL/../../3rd/rapidjson/include"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glew/."
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/include"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "GLS1.cpp"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "GLS1.exe",
+                "linkFlags": "/machine:x64 /INCREMENTAL:NO /subsystem:console",
+                "linkLanguageFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG",
+                "linkLibraries": "glu32.lib opengl32.lib ..\\..\\3rd\\glew\\Release\\glew.lib ..\\..\\3rd\\glfw\\src\\Release\\glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+                "linkerLanguage": "CXX",
+                "name": "GLS1",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/source/openGL",
+                "type": "EXECUTABLE"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/0fb28925fbe2a0cac8903d7d73953329/generate.stamp.rule"
+                    ]
+                  }
+                ],
+                "fullName": "ZERO_CHECK",
+                "name": "ZERO_CHECK",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples",
+                "type": "UTILITY"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "MinSizeRel",
+        "projects": [
+          {
+            "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw",
+            "name": "GLFW",
+            "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw",
+            "targets": [
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/MinSizeRel/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/MinSizeRel/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/MinSizeRel/glfw3.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /MD /O1 /Ob1 /DNDEBUG  ",
+                    "defines": [
+                      "_CRT_SECURE_NO_WARNINGS",
+                      "_GLFW_USE_CONFIG_H"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/include"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/src"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "C",
+                    "sources": [
+                      "context.c",
+                      "init.c",
+                      "input.c",
+                      "monitor.c",
+                      "vulkan.c",
+                      "window.c",
+                      "win32_init.c",
+                      "win32_joystick.c",
+                      "win32_monitor.c",
+                      "win32_time.c",
+                      "win32_tls.c",
+                      "win32_window.c",
+                      "wgl_context.c",
+                      "egl_context.c"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "internal.h",
+                      "../../../build/3rd/glfw/src/glfw_config.h",
+                      "../include/GLFW/glfw3.h",
+                      "../include/GLFW/glfw3native.h",
+                      "win32_platform.h",
+                      "win32_joystick.h",
+                      "wgl_context.h",
+                      "egl_context.h",
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glfw3.lib",
+                "linkFlags": "/machine:x64",
+                "linkerLanguage": "C",
+                "name": "glfw",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw/src",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw",
+                "type": "UTILITY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "E:/Seafile/Projects/cppSamples/build",
+            "name": "cppSamples",
+            "sourceDirectory": "E:/Seafile/Projects/cppSamples",
+            "targets": [
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glew/MinSizeRel/glew.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glew/MinSizeRel/glew.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glew/MinSizeRel/glew.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glew",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /MD /O1 /Ob1 /DNDEBUG  ",
+                    "defines": [
+                      "GLEW_STATIC"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glew/."
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "C",
+                    "sources": [
+                      "glew.c"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glew.lib",
+                "linkFlags": "/machine:x64",
+                "linkerLanguage": "C",
+                "name": "glew",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glew",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/MinSizeRel/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/MinSizeRel/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/MinSizeRel/glfw3.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /MD /O1 /Ob1 /DNDEBUG  ",
+                    "defines": [
+                      "_CRT_SECURE_NO_WARNINGS",
+                      "_GLFW_USE_CONFIG_H"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/include"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/src"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "C",
+                    "sources": [
+                      "context.c",
+                      "init.c",
+                      "input.c",
+                      "monitor.c",
+                      "vulkan.c",
+                      "window.c",
+                      "win32_init.c",
+                      "win32_joystick.c",
+                      "win32_monitor.c",
+                      "win32_time.c",
+                      "win32_tls.c",
+                      "win32_window.c",
+                      "wgl_context.c",
+                      "egl_context.c"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "internal.h",
+                      "../../../build/3rd/glfw/src/glfw_config.h",
+                      "../include/GLFW/glfw3.h",
+                      "../include/GLFW/glfw3native.h",
+                      "win32_platform.h",
+                      "win32_joystick.h",
+                      "wgl_context.h",
+                      "egl_context.h",
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glfw3.lib",
+                "linkFlags": "/machine:x64",
+                "linkerLanguage": "C",
+                "name": "glfw",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw/src",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/source/openGL/MinSizeRel/GLS1.exe",
+                  "E:/Seafile/Projects/cppSamples/build/source/openGL/MinSizeRel/GLS1.lib",
+                  "E:/Seafile/Projects/cppSamples/build/source/openGL/MinSizeRel/GLS1.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/source/openGL",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG  ",
+                    "defines": [
+                      "GLEW_STATIC"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/source/openGL/../../3rd/glfw/incldue"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/source/openGL/../../3rd/glm"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/source/openGL/../../3rd/rapidjson/include"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glew/."
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/include"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "GLS1.cpp"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "GLS1.exe",
+                "linkFlags": "/machine:x64 /INCREMENTAL:NO /subsystem:console",
+                "linkLanguageFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG",
+                "linkLibraries": "glu32.lib opengl32.lib ..\\..\\3rd\\glew\\MinSizeRel\\glew.lib ..\\..\\3rd\\glfw\\src\\MinSizeRel\\glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+                "linkerLanguage": "CXX",
+                "name": "GLS1",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/source/openGL",
+                "type": "EXECUTABLE"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/0fb28925fbe2a0cac8903d7d73953329/generate.stamp.rule"
+                    ]
+                  }
+                ],
+                "fullName": "ZERO_CHECK",
+                "name": "ZERO_CHECK",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples",
+                "type": "UTILITY"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "RelWithDebInfo",
+        "projects": [
+          {
+            "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw",
+            "name": "GLFW",
+            "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw",
+            "targets": [
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/RelWithDebInfo/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/RelWithDebInfo/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/RelWithDebInfo/glfw3.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /MD /Zi /O2 /Ob1 /DNDEBUG  ",
+                    "defines": [
+                      "_CRT_SECURE_NO_WARNINGS",
+                      "_GLFW_USE_CONFIG_H"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/include"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/src"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "C",
+                    "sources": [
+                      "context.c",
+                      "init.c",
+                      "input.c",
+                      "monitor.c",
+                      "vulkan.c",
+                      "window.c",
+                      "win32_init.c",
+                      "win32_joystick.c",
+                      "win32_monitor.c",
+                      "win32_time.c",
+                      "win32_tls.c",
+                      "win32_window.c",
+                      "wgl_context.c",
+                      "egl_context.c"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "internal.h",
+                      "../../../build/3rd/glfw/src/glfw_config.h",
+                      "../include/GLFW/glfw3.h",
+                      "../include/GLFW/glfw3native.h",
+                      "win32_platform.h",
+                      "win32_joystick.h",
+                      "wgl_context.h",
+                      "egl_context.h",
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glfw3.lib",
+                "linkFlags": "/machine:x64",
+                "linkerLanguage": "C",
+                "name": "glfw",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw/src",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw",
+                "type": "UTILITY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "E:/Seafile/Projects/cppSamples/build",
+            "name": "cppSamples",
+            "sourceDirectory": "E:/Seafile/Projects/cppSamples",
+            "targets": [
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glew/RelWithDebInfo/glew.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glew/RelWithDebInfo/glew.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glew/RelWithDebInfo/glew.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glew",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /MD /Zi /O2 /Ob1 /DNDEBUG  ",
+                    "defines": [
+                      "GLEW_STATIC"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glew/."
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "C",
+                    "sources": [
+                      "glew.c"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glew.lib",
+                "linkFlags": "/machine:x64",
+                "linkerLanguage": "C",
+                "name": "glew",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glew",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/RelWithDebInfo/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/RelWithDebInfo/glfw3.lib",
+                  "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src/RelWithDebInfo/glfw3.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /MD /Zi /O2 /Ob1 /DNDEBUG  ",
+                    "defines": [
+                      "_CRT_SECURE_NO_WARNINGS",
+                      "_GLFW_USE_CONFIG_H"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/include"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/src"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/build/3rd/glfw/src"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "C",
+                    "sources": [
+                      "context.c",
+                      "init.c",
+                      "input.c",
+                      "monitor.c",
+                      "vulkan.c",
+                      "window.c",
+                      "win32_init.c",
+                      "win32_joystick.c",
+                      "win32_monitor.c",
+                      "win32_time.c",
+                      "win32_tls.c",
+                      "win32_window.c",
+                      "wgl_context.c",
+                      "egl_context.c"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "internal.h",
+                      "../../../build/3rd/glfw/src/glfw_config.h",
+                      "../include/GLFW/glfw3.h",
+                      "../include/GLFW/glfw3native.h",
+                      "win32_platform.h",
+                      "win32_joystick.h",
+                      "wgl_context.h",
+                      "egl_context.h",
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "glfw3.lib",
+                "linkFlags": "/machine:x64",
+                "linkerLanguage": "C",
+                "name": "glfw",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw/src",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "E:/Seafile/Projects/cppSamples/build/source/openGL/RelWithDebInfo/GLS1.exe",
+                  "E:/Seafile/Projects/cppSamples/build/source/openGL/RelWithDebInfo/GLS1.lib",
+                  "E:/Seafile/Projects/cppSamples/build/source/openGL/RelWithDebInfo/GLS1.pdb"
+                ],
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/source/openGL",
+                "fileGroups": [
+                  {
+                    "compileFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG  ",
+                    "defines": [
+                      "GLEW_STATIC"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/source/openGL/../../3rd/glfw/incldue"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/source/openGL/../../3rd/glm"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/source/openGL/../../3rd/rapidjson/include"
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glew/."
+                      },
+                      {
+                        "path": "E:/Seafile/Projects/cppSamples/3rd/glfw/include"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "GLS1.cpp"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "GLS1.exe",
+                "linkFlags": "/machine:x64 /debug /INCREMENTAL /subsystem:console",
+                "linkLanguageFlags": "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG",
+                "linkLibraries": "glu32.lib opengl32.lib ..\\..\\3rd\\glew\\RelWithDebInfo\\glew.lib ..\\..\\3rd\\glfw\\src\\RelWithDebInfo\\glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+                "linkerLanguage": "CXX",
+                "name": "GLS1",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/source/openGL",
+                "type": "EXECUTABLE"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build/3rd/glfw",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples/3rd/glfw",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "CMakeLists.txt"
+                    ]
+                  }
+                ],
+                "fullName": "ALL_BUILD",
+                "name": "ALL_BUILD",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "E:/Seafile/Projects/cppSamples/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/0fb28925fbe2a0cac8903d7d73953329/generate.stamp.rule"
+                    ]
+                  }
+                ],
+                "fullName": "ZERO_CHECK",
+                "name": "ZERO_CHECK",
+                "sourceDirectory": "E:/Seafile/Projects/cppSamples",
+                "type": "UTILITY"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "cookie": "0.17928562671777248",
+    "inReplyTo": "codemodel",
+    "type": "reply"
   }
 }

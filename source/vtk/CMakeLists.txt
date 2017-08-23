@@ -1,16 +1,14 @@
-cmake_minimum_required(VERSION 2.8)
- 
 PROJECT(Cone)
 
 if(MSVC)
-  set(VTK_DIR "D:/Develop/Source/VTK-7.0.0/build")
+set(VTK_DIR "C:/Program Files/VTK/")
 endif()
- 
-find_package(VTK REQUIRED)
+
+find_package(VTK)
 include(${VTK_USE_FILE})
  
-#add_executable(Cone MACOSX_BUNDLE vtk1.cpp)
-add_executable(Cone  vtk1.cpp)
+add_executable(Cone MACOSX_BUNDLE vtk1.cpp)
+#add_executable(Cone  vtk1.cpp)
 
 set_target_properties( Cone PROPERTIES CXX_STANDARD 14)
 

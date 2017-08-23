@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-include(CMakeToolsHelpers OPTIONAL)
+#include(CMakeToolsHelpers OPTIONAL)
 
 ## all samples
 project(cppSamples)
@@ -51,9 +51,6 @@ if(BUILD_OPENMP)
 endif()
 ###########  vulkan $7
 if(BUILD_VULKAN)
-    if (MSVC)
-        set( ENV{VULKAN_SDK} "D:/Develop/SDK/vulkansdk/1.0.8.0" )
-    endif()
     add_subdirectory(source/vulKan)
 endif()
 ########## MULTITHREAD #8

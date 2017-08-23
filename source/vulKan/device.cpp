@@ -33,7 +33,7 @@ create and destroy a Vulkan physical device
 #include <iostream>
 #include <cassert>
 #include <cstdlib>
-//#include "util_init.hpp"
+#include "util_init.hpp"
 
 
 int main(int argc, char *argv[]) 

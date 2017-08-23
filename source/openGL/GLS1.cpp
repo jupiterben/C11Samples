@@ -3,11 +3,36 @@
 #include "glfwWindow.h"
 #include <glm/glm.hpp>
 #include <iostream>
+#include <vector>
+#include "glpp.h"
+
 
 const char * vShader = R"(
 
 )";
+const char * pShader = R"(
 
+
+)";
+
+class Vertex
+{
+public:
+    Vertex(std::initializer_list<GLfloat> l){
+
+    }
+    
+protected:   
+	GLfloat xyz[3];
+    GLfloat offset[2];
+};
+
+std::vector<Vertex> vertex = {
+	{ 0,0,0,0,0,0,0 },
+	{ 0,0,0,0,0,1,0 },
+	{ 0,0,0,0,0,1,1 },
+	{ 0,0,0,0,0,0,1 },
+};
 
 int main(void)
 {
@@ -20,16 +45,14 @@ int main(void)
         glDepthFunc(GL_LEQUAL);
         glEnable(GL_DEPTH_TEST);
         glShadeModel(GL_SMOOTH);
+
+
     };
 
     w.fDraw = []()
     {
 
-       glBegin(GL_TRIANGLES);
-            glVertex3d(0.5,0.5,0);
-            glVertex3d(0.5,0,0);
-            glVertex3d(0,0.5,0);
-       glEnd();
+      
     };
    
     w.run();

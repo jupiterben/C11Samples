@@ -38,7 +38,7 @@ void SumUp(const T& a )
     }
     
      std::cout<<"sum: "<<sum<<std::endl;     
-     delete []sumArray;
+     //delete []sumArray;
 }
 
 //sum up  array use reduction, 
@@ -64,7 +64,7 @@ void MaxNum(const T& a )
          int temp = a[i];
          #pragma omp critical
          if(max < temp)
-            max = temp
+            max = temp;
      }   
      std::cout<<"max: "<<max<<std::endl;     
 }

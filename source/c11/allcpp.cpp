@@ -128,10 +128,20 @@ void testLambda()
     std::function< int(double,double) > lf = [](double,double){ return int(1); };
 }
 
+#include "util/codeProfiler.h"
+#include <iostream>
+void testProfiler(){
+    CCodeProfiler profiler;
+    profiler.start();
+    std::cout<< profiler.end().count()<< std::endl;    
+}
+
+
 int main()
 {
-    testAlignof();
-    testLambda();
+    //testAlignof();
+    //testLambda();
+    testProfiler();
 
     return 1;
 }

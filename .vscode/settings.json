@@ -1,6 +1,0 @@
-// Place your settings in this file to overwrite default and user settings.
-{
-    "cmake.buildDirectory": "${workspaceRoot}/../../../build/cppSamples",
-    "cmake.experimental.enableTargetDebugging" : true ,
-    "clang.cxxflags": ["-std=c++14"]
-}

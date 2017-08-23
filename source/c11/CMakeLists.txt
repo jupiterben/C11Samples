@@ -1,6 +1,6 @@
 #SEE https://cmake.org/cmake/help/v3.6/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html#prop_gbl:CMAKE_CXX_KNOWN_FEATURES
 add_executable(allcpp allcpp.cpp)
-set_target_properties(allcpp PROPERTIES CXX_STANDARD 14)
+set_target_properties(allcpp PROPERTIES CXX_STANDARD 11)
 target_compile_features(allcpp PRIVATE 
   #cxx_aggregate_default_initializers
   cxx_alias_templates
