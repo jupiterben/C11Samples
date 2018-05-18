@@ -1,0 +1,10 @@
+find_package(OpenCL)
+
+if(${OpenCL_FOUND})
+    include_directories(${OpenCL_INCLUDE_DIRS} ".")
+    add_executable(openCL  openCL.cpp )
+    add_executable(clinfo clinfo.c getopt_long.c)
+    target_link_libraries(openCL ${OpenCL_LIBRARIES})
+    target_link_libraries(clinfo ${OpenCL_LIBRARIES})
+    target_compile_features(openCL PRIVATE cxx_auto_type)
+endif()

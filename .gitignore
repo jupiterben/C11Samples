@@ -2,3 +2,5 @@
 build
 .vscode/.BROWSE*
 .vscode/.BROWSE.VC.DB
+
+CMakeFiles
